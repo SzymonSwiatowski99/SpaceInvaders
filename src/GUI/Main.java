@@ -24,8 +24,8 @@ public class Main extends JFrame {
             this.setDefaultCloseOperation(3);
             this.setResizable(false);
             this.setVisible(true);
-            this.repaint();
             initComponents();
+
 
 
         }
@@ -35,10 +35,11 @@ public class Main extends JFrame {
             playButton = new JButton("Play");
             ScoreBoardButton = new JButton("score table");
             infinityModeButton = new JButton("infinity");
+            Container container = this.getContentPane();
             int buttonSizeHorizontal = 200;
             int buttonSizeVertical = 100;
             groupLayout = new GroupLayout(getContentPane());
-            this.getContentPane().setLayout(groupLayout);
+            container.setLayout(groupLayout);
             groupLayout.setVerticalGroup(groupLayout.createSequentialGroup()
                     .addContainerGap(0,height/2-buttonSizeVertical/2)
                     .addComponent(infinityModeButton,0,buttonSizeVertical,buttonSizeVertical)
@@ -99,5 +100,8 @@ public class Main extends JFrame {
         super.paint(g);
         ImageIcon i = new ImageIcon("kosmos.png");
         i.paintIcon(this, g, 0, 0);
+        infinityModeButton.repaint();
+        playButton.repaint();
+        ScoreBoardButton.repaint();
     }
 }

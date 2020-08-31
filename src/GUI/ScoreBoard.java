@@ -15,10 +15,9 @@ public class ScoreBoard extends JFrame {
     private JButton bestStandardMode;
     private JButton bestTimeInf;
     private JButton bestWaveInf;
+    private JButton backToMenu;
     private int width;
     private int height;
-    private String gametitle;
-    private JButton backToMenu;
     private GroupLayout groupLayout;
 
     public ScoreBoard(String gametitle,int width,int height){
@@ -42,7 +41,6 @@ public class ScoreBoard extends JFrame {
         this.width = width;
         this.repaint();
         this.height = height;
-        this.gametitle = gametitle;
         this.setTitle(gametitle);
         this.setBounds(0,0,width,height);
         this.setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png"));
@@ -106,5 +104,10 @@ public class ScoreBoard extends JFrame {
         super.paint(g);
         ImageIcon i = new ImageIcon("kosmos.png");
         i.paintIcon(this, g, 0, 0);
+        bestStandardMode.repaint();
+        bestTimeInf.repaint();
+        bestWaveInf.repaint();
+        backToMenu.repaint();
+
     }
 }

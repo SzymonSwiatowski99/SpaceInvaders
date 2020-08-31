@@ -8,7 +8,7 @@ public class Thing {
     private int view;
     private int power;
     private int isMove;
-
+    private int afterDie;
     public Thing(){ }
 
     public Thing(int x, int y, int speed){
@@ -24,6 +24,7 @@ public class Thing {
         this.y = y;
         this.isAlive = true;
         this.view = view;
+        this.afterDie = 1;
     }
     public Thing(int x, int y, int speed, int view, int power){
         this.speed = speed;
@@ -70,5 +71,13 @@ public class Thing {
 
     public void setIsMove(int isMove) {
         this.isMove = isMove;
+    }
+
+    public int getAfterDie() {
+        return afterDie;
+    }
+
+    public void setAfterDie(int afterDie) {
+        this.afterDie = afterDie;
     }
 }
